@@ -1,0 +1,746 @@
+@import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@700&display=swap');
+
+@font-face {
+    font-family: 'AnandaBlack';
+    src: url(../assets/fonts/AnandaBlackPersonalUseRegular-rg9Rx.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #333;
+}
+
+/* Start: Scroll up btn */
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    background-color: rgba(255, 120, 23, 0.7);
+    color: white;
+    cursor: pointer;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+#myBtn:hover {
+    background-color: rgba(255, 120, 23, 1);
+}
+/* End: Scroll up btn */
+
+/* Begin: Navigaiton Bar */
+#header {
+    height: 50px;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+#nav {
+    display: inline-block;
+}
+
+#nav,
+.subnav {
+    list-style-type: none;
+}
+
+#nav>li {
+    float: left;
+}
+
+#nav li {
+    position: relative;
+}
+
+#nav>li>a {
+    color: #fff;
+}
+
+#nav li a {
+    text-decoration: none;
+    line-height: 46px;
+    padding: 2px 32px;
+    display: block;
+}
+
+#nav>li:hover:not(.active-1)>a,
+#nav .subnav li:hover:not(.active-1){
+    background-color: #ccc;
+    color: #333;
+}
+
+.active-1 {
+    background-color: #1da1f2;
+}
+
+#nav .subnav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    min-width: 260px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#nav .subnav a {
+    color: #000;
+    padding: 10px 32px;
+    line-height: 38px;
+}
+
+#nav li:hover .subnav {
+    display: block;
+}
+
+#nav .nav-arrow-down {
+    font-size: 14px;
+}
+
+#header .logo {
+    color: white;
+    float: left;
+    text-decoration: none;
+    padding: 0px 60px;
+    font-size: 30px;
+    font-family: "AnandaBlack", sans-serif;
+    cursor: pointer;
+}
+
+
+#header .login {
+    float: right;
+    border: none;
+    outline: none;
+    background: none;
+    color: white;
+    font-size: 16px;
+    padding: 15.6px 24px;
+    background-color: #1da1f2;
+    text-decoration: none;
+}
+
+#header .login:hover {
+    background-color: #1da1f2;
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.search-bar {
+    float: right;
+    background-color: white;
+    padding: 10px 12px;
+    border-radius: 100vh;
+    border: none;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    margin-top: 6px;
+}
+
+.search-bar .submit {
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+.search-bar .search-text {
+    width: 0px;
+    font-size: 16px;
+    border: none;
+    background: transparent;
+    outline: none;
+    transition: 0.5s;
+}
+
+.active .submit {
+    float: right;
+}
+
+.active .search-text {
+    width: 400px;
+    padding: 0 20px;
+}
+
+/* End: Navigaiton Bar */
+
+/* Begin: Image Slide show */
+#image-slideshow {
+    margin-top: 50.7px;
+    width: 100%;
+    height: 600px;
+}
+
+.slides {
+    background-color: rgba(42, 123, 216, 0.722);
+    position: relative;
+    width: 100%;
+    height: 600px;
+
+    display: block;
+    transition: all 0.5s;
+
+}
+
+.slides .content {
+    position: absolute;
+    left: 0;
+    width: 50%;
+    height: 600px;
+}
+
+.slides .image {
+    position: absolute;
+    right: 0;
+    width: 50%;
+    height: 600px;
+    /* padding-top: 50px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slides .text {
+    max-width: 500px;
+    line-height: 50px;
+    position: absolute;
+    top: 30%;
+    left: 15%;
+
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 44px;
+    font-weight: 700;
+    font-family: 'Corinthia', cursive;
+}
+
+.slides p {
+    font-size: 36px;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.9);
+    font-family: 'Corinthia', cursive;
+    
+    position: absolute;
+    top: 60%;
+    left: 15%;
+}
+
+.slides img {
+    border-radius: 20px;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+/* End: Image Slide show */
+
+/* Begin: Best Seller */
+#best-seller {
+    position: relative;
+    height: 667px;
+    padding: 50px 35px 0;
+
+    background-color: aliceblue;
+}
+
+#best-seller .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: 40px;
+}
+
+#best-seller .title p {
+    font-size: 40px;
+    color: #222;
+
+    border-top: 2px solid #222;
+    border-bottom: 2px solid #222;
+    padding: 12px;
+}
+
+
+#best-seller .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    height: 500px;
+}
+
+#best-seller .box {
+    position: relative;
+
+    width: 200px;
+    height: 350px;
+
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 5px 5px 10px #333;
+
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+#best-seller .box:hover {
+    cursor: pointer;
+
+    width: 210px;
+    height: 360px;
+}
+
+#best-seller .box .discount-number {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    padding: 2px;
+
+    color: white;
+    background-color: rgb(221, 0, 0);
+    border-radius: 5px;
+}
+
+#best-seller .box img {
+    width: 300px;
+    height: 150px;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.5s;
+}
+
+#best-seller .box a {
+    text-decoration: none;
+    color: #000;
+}
+
+#best-seller .box .name {
+    width: 160px;
+    position: absolute;
+    bottom: 100px;
+    left: 12px;
+    transition: 0.5s;
+}
+
+#best-seller .box .name:hover {
+    padding: 12px 0px;
+    color: #1da1f2;
+}
+
+#best-seller .box .price {
+    position: absolute;
+    bottom: 70px;
+    left: 12px;
+    text-decoration: line-through;
+}
+
+#best-seller .box .discount {
+    position: absolute;
+    bottom: 50px;
+    left: 12px;
+    font-style: italic;
+    color: red;
+}
+
+#best-seller .box .buy-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    padding: 4px 8px;
+
+    background-color: #1da1f2;
+    color: #fff;
+
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+#best-seller .box .buy-btn:hover {
+    cursor: pointer;
+    opacity: 0.4;
+}
+
+#best-seller .box .sold {
+    position: absolute;
+    bottom: 13px;
+    right: 10px;
+
+    font-size: 13px;
+    color: #888;
+    font-style: italic;
+}
+/* End: Best Seller */
+
+/* Begin: Product Slide show */
+#sale {
+    padding: 50px 35px 0;
+    background-color: #333;
+}
+#sale .glider-contain {
+    height: 500px;
+    position: relative;
+}
+
+#sale .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: 40px;
+}
+
+#sale .title p {
+    font-size: 40px;
+    color: aliceblue;
+
+    border-top: 1px solid aliceblue;
+    border-bottom: 1px solid aliceblue;
+    padding: 12px;
+}
+
+#sale .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#sale .box {
+    position: relative;
+
+    width: 200px;
+    height: 350px;
+
+    background-color: #fff;
+    box-shadow: 5px 5px 10px #fff;
+
+    border-radius: 10px;
+    transition: 0.1s;
+}
+
+#sale .box:hover {
+    cursor: pointer;
+    width: 210px;
+    height: 360px;
+}
+
+#sale .box .discount-number {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    padding: 2px;
+
+    color: white;
+    background-color: rgb(221, 0, 0);
+    border-radius: 5px;
+}
+
+#sale .box img {
+    width: 300px;
+    height: 150px;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.5s;
+}
+
+#sale .box a {
+    text-decoration: none;
+    color: #000;
+}
+
+#sale .box .name {
+    width: 160px;
+    position: absolute;
+    bottom: 100px;
+    left: 12px;
+    transition: 0.5s;
+}
+
+#sale .box .name:hover {
+    padding: 12px 0px;
+    color: #1da1f2;
+}
+
+#sale .box .price {
+    position: absolute;
+    bottom: 70px;
+    left: 12px;
+    text-decoration: line-through;
+}
+
+#sale .box .discount {
+    position: absolute;
+    bottom: 50px;
+    left: 12px;
+    font-style: italic;
+    color: red;
+}
+
+#sale .box .buy-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    padding: 4px 8px;
+
+    background-color: #1da1f2;
+    color: #fff;
+
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+#sale .box .buy-btn:hover {
+    cursor: pointer;
+    opacity: 0.4;
+}
+
+#sale .box .sold {
+    position: absolute;
+    bottom: 13px;
+    right: 10px;
+
+    font-size: 13px;
+    color: #888;
+    font-style: italic;
+}
+/* End: Product Slide show */
+/* Start: Contact Form */
+#contact {
+    position: relative;
+    padding: 50px 35px 0;
+    height: 600px;
+
+    background-color: aliceblue;
+}
+
+#contact .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: 40px;
+}
+
+#contact .title p {
+    font-size: 40px;
+    color: #222;
+
+    border-top: 2px solid #222;
+    border-bottom: 2px solid #222;
+    padding: 12px;
+}
+
+#contact .container {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 1000px;
+    height: 300px;
+}
+
+#contact .container .adress {
+    position: absolute;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    height: 150px;
+    width: 500px;
+}
+
+#contact .adress i {
+    font-size: 24px;
+}
+
+#contact .adress .location {
+    position: absolute;
+    top: 1px;
+    left: 10%;
+
+    font-size: 20px;
+}
+
+#contact .adress .phone {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+#contact .adress .phone-number {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+
+    transform: translateY(-50%);
+
+    font-size: 20px;
+}
+
+#contact .adress .mail {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#contact .adress .email {
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+
+    font-size: 20px;
+}
+
+#contact .container .info {
+    position: absolute;
+    top: 50%;
+    right: 0;
+
+    transform: translateY(-50%);
+
+    height: 150px;
+    width: 500px;
+}
+
+#contact .info input {
+    padding: 10px;
+    width: 500px;
+
+    border: 1px solid #333;
+}
+
+#contact .info .name {
+    position: absolute;
+    top: 0;
+    height: 40px;
+}
+
+#contact .info .dia-chi {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 40px;
+}
+
+#contact .info .mess {
+    position: absolute;
+    bottom: 0;
+    height: 40px;
+}
+
+#contact button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    padding: 15px 30px;
+
+    background-color: #1da1f2;
+    color:aliceblue;
+    font-weight: bold;
+
+    border: none;
+}
+
+#contact button:hover {
+    cursor: pointer;
+
+    background-color: #197bb8;
+}
+
+/* End: Contact Form */
+/* Start: Footer */
+#footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+
+    background-color: #333;
+}
+
+#footer .logo {
+    height: 150px;
+    width: 560px;
+    position: absolute;
+    top: 15%;
+
+    border-right: 2px solid #fff;
+}
+
+#footer .logo a {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+
+    text-decoration: none;
+    color: #fff;
+    font-family: 'AnandaBlack';
+    font-size: 50px;
+}
+
+#footer .logo p {
+    position: absolute;
+    top: 75%;
+    left: 20%;
+
+    color: #fff;
+    font-size: 22px;
+    font-style: italic;
+}
+
+#footer .adress {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    margin-top: 50px;
+
+    width: 750px;
+    height: 100px;
+}
+
+#footer .adress p {
+    color: #7fffd4;
+    font-size: 19px;
+    font-style: italic;
+
+    margin: 10px 0;
+}
+/* End: Footer */

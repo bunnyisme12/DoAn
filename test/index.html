@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/img/icon2.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/glider.css">
+
+    <script src="https://kit.fontawesome.com/b9d209641c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <title>KAT</title>
+</head>
+
+<body>
+    <button onclick="topFunction()" id="myBtn" title="Lên đầu trang"><i class="uil uil-arrow-up"></i></button>
+    <div id="header">
+        <a class="logo" href="index.html">KAT</a>
+        <!-- Begin: Nav -->
+        <ul id="nav">
+            <li><a class="active-1" href="#">Home</a></li>
+            <li>
+                <a href="">
+                    Thể loại
+                    <i class="nav-arrow-down fa fa-caret-down"></i>
+                </a>
+                <ul class="subnav">
+                    <li><a href="./web/giao-trinh/index.html">Giáo trình</a></li>
+                    <li><a href="./web/van-hoa-xa-hoi-lich-su/index.html">Văn hóa xã hội - Lịch sử</a></li>
+                    <li><a href="./web/tieu-thuyet-truyen/index.html">Truyện - Tiểu thuyết</a></li>
+                    <li><a href="./web/thieu-nhi/index.html">Thiếu nhi</a></li>
+                    <li><a href="./web/khoa-hoc-kinh-te/index.html">Khoa học - Kinh tế</a></li>
+                    <li><a href="./web/Van-hoc-nghe-thuat/index.html">Văn học - Nghệ thuật</a></li>
+                </ul>
+            </li>
+            <li><a href="#contact">Liên hệ</a></li>
+            <li>
+                <a href="">
+                    More
+                    <i class="nav-arrow-down fa fa-caret-down"></i>
+                </a>
+                <ul style="min-width: 170px;" class="subnav">
+                    <li><a href="#best-seller">Best Sellers</a></li>
+                    <li><a href="#sale">Sách Sale</a></li>
+                </ul>
+            </li>
+
+        </ul>
+
+        <a class="login" href="./web/login/login.html">Đăng nhập</a>
+
+        <div class="search-bar" id="search">
+            <input type="text" placeholder="Nơi bạn tìm kiếm tri thức" class="search-text" autocomplete="chrome-off">
+            <button class="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <!-- End: Nav -->
+    </div>
+
+    <!-- Start: Image Slideshow -->
+    <div id="image-slideshow">
+        <div class="container">
+            <div class="slides fade">
+                <div class="content">
+                    <p class="text">Gặp được một quyển sách hay nên mua liền dù đọc được hay không đọc được, vì sớm muộn
+                        gì cũng
+                        cần đến nó.</p>
+                    <p>- W.Churchill -</p>
+                </div>
+                <div class="image">
+                    <img style="width: calc(350px * 1.2); height: calc(375px * 1.2);" src="https://dotchuoinon.files.wordpress.com/2011/06/winston_churchill.jpg" alt="W.Churchill">
+                </div>
+            </div>
+            <div class="slides fade">
+                <div class="content">
+                    <p class="text">Thích đọc sách tức là biết đánh đổi những giờ phút buồn tẻ không thể tránh được
+                        trong cuộc
+                        đời lấy những giờ phút lý thú.</p>
+                    <p style="top: 70%;">- Môngtexkiơ -</p>
+                </div>
+                <div class="image">
+                    <img style="width: calc(204px * 2); height: calc(247px * 2);"
+                    src="data:image/jpeg;base64,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"
+                        alt="W.Churchill">
+                </div>
+            </div>
+            <div class="slides fade">
+                <div class="content">
+                    <p class="text">Một cuốn sách hay cho ta một điều tốt, một người bạn tốt cho ta một điều hay.</p>
+                    <p>- Gustavơ Lebon -</p>
+                </div>
+                <div class="image">
+                    <img style="width: calc(250px * 1.5); height: calc(264 * 1.5);"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Gustave_Le_Bon.jpg/250px-Gustave_Le_Bon.jpg"
+                    alt="W.Churchill">
+                </div>
+            </div>
+            <div class="slides fade">
+                <div class="content">
+                    <p style="top: 30%;" class="text">Vương Thù nói: Sách Kinh thì nuôi căn bản con người, sách Sử thì mở mang tài trí cho con người</p>
+                    <p style="top: 60%;">- Lê Quý Đôn -</p>
+                </div>
+                <div class="image">
+                    <img style="width: calc(500px / 1.5); height: calc(594px / 1.5);"
+                    src="./assets/img/le-quy-don.jpg"
+                    alt="W.Churchill">
+                </div>
+            </div>
+            <div class="slides fade">
+                <div class="content">
+                    <p style="top: 30%;" class="text">Chính từ sách mà những người khôn ngoan tìm được sự an ủi khỏi những rắc rối của cuộc đời.</p>
+                    <p style="top: 60%;">- Victor Hugo -</p>
+                </div>
+                <div class="image">
+                    <img style="width: calc(403px / 1.3); height: calc(533px / 1.3);"
+                    src="./assets/img/victor-hugo.jpg"
+                    alt="W.Churchill">
+                </div>
+            </div>
+            <div class="slides fade">
+                <div class="content">
+                    <p class="text">Chúng ta sẽ trở thành gì phụ thuộc vào điều chúng ta đọc sau khi các thầy cô giáo đã xong việc với chúng ta. Trường học
+                    vĩ đại nhất chính là sách vở.</p>
+                    <p style="top: 80%;">- Thomas Carlyle -</p>
+                </div>
+                <div class="image">
+                    <img style="width: calc(360px / 1); height: calc(450 / 1);"
+                    src="./assets/img/thomas-carlyle.jpg"
+                    alt="W.Churchill">
+                </div>
+            </div>
+            <div class="slides fade">
+                <div class="content">
+                    <p style="top: 17%;" class="text">Những gì sách dạy chúng ta cũng giống như lửa. Chúng ta lấy nó từ nhà hàng xóm, thắp nó trong nhà ra, đem nó truyền cho
+                    người khác và nó trở thành tài sản của tất cả mọi người.</p>
+                    <p style="top: 75%;">- Voltaire -</p>
+                </div>
+                <div class="image">
+                    <img style="width: calc(660px / 2.5); height: calc(1024 / 2.5);"
+                    src="./assets/img/voltaire.jpg"
+                    alt="W.Churchill">
+                </div>
+            </div>
+            <div class="slides fade">
+                <div class="content">
+                    <p style="top: 17%;" class="text">Một cuốn sách hay thực sự hay dạy tôi nhiều điều hơn là đọc nó, Tôi phải nhanh chóng đặt nó xuống, bắt đầu sống theo
+                    những điều nó chỉ dẫn. Điều tôi bắt đầu bằng cách đọc, tôi phải kết thúc bằng hành động.</p>
+                    <p style="top: 75%;">- Henry David Thoreau -</p>
+                </div>
+                <div class="image">
+                    <img style="width: calc(1200px / 3); height: calc(1200px / 3);"
+                    src="./assets/img/henry-david-thoreau.jpg"
+                    alt="W.Churchill">
+                </div>
+            </div>
+            <div class="slides fade">
+                <div class="content">
+                    <p style="top: 17%;" class="text">Vào khoảnh khắc mà chúng ta quyết thuyết phục đứa trẻ, bất cứ đứa trẻ nào, bước qua bậc thềm ấy, bậc thềm màu nhiệm dẫn
+                    vào thư viện, ta thay đổi cuộc sống của nó mãi mãi, theo cách tốt đẹp hơn.</p>
+                    <p style="top: 75%;">- Barack Obama -</p>
+                </div>
+                <div class="image">
+                    <img style="width: calc(1200px / 3.5); height: calc(1624px / 3.5);"
+                    src="./assets/img/barack-obama.jpg"
+                    alt="W.Churchill">
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <!-- End: Image Slideshow -->
+    
+    <!-- Start: Best Seller -->
+    <div id="best-seller">
+        <div class="title">
+            <p>Best Sellers</p>
+        </div>
+        <div class="container">
+            <div class="box">
+                <a href="https://shopee.vn/S%C3%A1ch-Ti%E1%BA%BFng-Vi%E1%BB%87t-Gi%C3%A0u-%C4%90%E1%BA%B9p-%C4%90i-T%C3%ACm-B%E1%BA%A3n-S%E1%BA%AFc-Ti%E1%BA%BFng-Vi%E1%BB%87t-(T%C3%A1i-B%E1%BA%A3n-2022)-i.142856269.23909410294?sp_atk=7af9b28c-f9d4-409e-9d7f-247b4550e908&xptdk=7af9b28c-f9d4-409e-9d7f-247b4550e908">
+                    <img style="width: 170px" src="./web/van-hoa-xa-hoi-lich-su/img/di-tim-ban-sac-tieng-viet.jpg" alt="Đi tìm bản sắc tiếng Việt">
+            
+                    <p class="name">Đi tìm bản sắc tiếng Việt</p>
+            
+                    <p style="text-decoration: none; color: #f2761d;" class="price">105.000đ</p>
+
+                    <!-- <p class="discount">50.000đ</p> -->
+                </a>
+            
+                <button class="buy-btn">
+                    <a style="color: #fff;" href="https://shopee.vn/S%C3%A1ch-Ti%E1%BA%BFng-Vi%E1%BB%87t-Gi%C3%A0u-%C4%90%E1%BA%B9p-%C4%90i-T%C3%ACm-B%E1%BA%A3n-S%E1%BA%AFc-Ti%E1%BA%BFng-Vi%E1%BB%87t-(T%C3%A1i-B%E1%BA%A3n-2022)-i.142856269.23909410294?sp_atk=7af9b28c-f9d4-409e-9d7f-247b4550e908&xptdk=7af9b28c-f9d4-409e-9d7f-247b4550e908">Mua ngay</a>
+                </button>
+                <p class="sold">Đã bán <b style="color: rgb(0, 235, 0);">918</b></p>
+            </div>
+            <div class="box">
+                <div class="discount-number">-18%</div>
+                <a href="https://shopee.vn/-M%C3%A3-LIFEMC17M1-10-%C4%91%C6%A1n-150k-S%C3%A1ch-Ng%C3%A0y-X%C6%B0a-C%C3%B3-M%E1%BB%99t-Chuy%E1%BB%87n-T%C3%ACnh-(T%C3%A1i-B%E1%BA%A3n-2019)-i.142856269.7735169529?sp_atk=11d2af7f-32c8-4692-940b-efa584a82f4a&xptdk=11d2af7f-32c8-4692-940b-efa584a82f4a">
+                    <img style="width: 150px;" src="./web/tieu-thuyet-truyen/img/chuyen-tinh.jpg" alt="Ngày xưa có 1 chuyện tình">
+            
+                    <p class="name">Ngày xưa có 1 chuyện tình</p>
+            
+                    <p class="price">125.000đ</p>
+            
+                    <p class="discount">102.900đ</p>
+                </a>
+            
+                <button class="buy-btn">
+                    <a style="color: #fff;" href="https://shopee.vn/-M%C3%A3-LIFEMC17M1-10-%C4%91%C6%A1n-150k-S%C3%A1ch-Ng%C3%A0y-X%C6%B0a-C%C3%B3-M%E1%BB%99t-Chuy%E1%BB%87n-T%C3%ACnh-(T%C3%A1i-B%E1%BA%A3n-2019)-i.142856269.7735169529?sp_atk=11d2af7f-32c8-4692-940b-efa584a82f4a&xptdk=11d2af7f-32c8-4692-940b-efa584a82f4a">Mua ngay</a>
+                </button>
+                <p class="sold">Đã bán <b style="color: rgb(0, 235, 0);" >981</b></p>
+            </div>
+            <div class="box">
+                <div class="discount-number">-5%</div>
+                <a
+                    href="https://shopee.vn/S%C3%A1ch-L%C5%A9-Tr%E1%BA%BB-L%C3%A0ng-%E1%BB%92n-%C3%80o-i.142856269.15582177999?sp_atk=cd1e3601-e534-46cd-9fdf-f8b7956bc9a5&xptdk=cd1e3601-e534-46cd-9fdf-f8b7956bc9a5">
+                    <img style="width: 150px;" src="./web/thieu-nhi/img/lu-tre-lang-on-ao.jpg" alt="Lũ trẻ làng ồn ào">
+            
+                    <p class="name">Lũ trẻ làng ồn ào</p>
+            
+                    <p class="price">54.000đ</p>
+            
+                    <p class="discount">51.300đ</p>
+                </a>
+            
+                <button class="buy-btn">
+                    <a style="color: #fff;" href="https://shopee.vn/S%C3%A1ch-L%C5%A9-Tr%E1%BA%BB-L%C3%A0ng-%E1%BB%92n-%C3%80o-i.142856269.15582177999?sp_atk=cd1e3601-e534-46cd-9fdf-f8b7956bc9a5&xptdk=cd1e3601-e534-46cd-9fdf-f8b7956bc9a5">Mua ngay</a>
+                </button>
+                <p class="sold">Đã bán <b style="color: rgb(0, 235, 0);" >1469</b></p>
+            </div>
+            <div class="box">
+                <div class="discount-number">-26%</div>
+                <a
+                    href="https://shopee.vn/S%C3%A1ch-Giao-ti%E1%BA%BFp-chuy%C3%AAn-nghi%E1%BB%87p-%C4%91%E1%BB%83-b%C3%A1n-h%C3%A0ng-th%C3%A0nh-c%C3%B4ng-i.154779484.2327389360?sp_atk=7b0eeeed-ac08-4790-a584-714cebd72194&xptdk=7b0eeeed-ac08-4790-a584-714cebd72194">
+                    <img style="width: 100px;" src="./web/khoa-hoc-kinh-te/img/chao-hang.png"
+                        alt="Chào hàng chuyên nghiệp để bán hàng thành công">
+            
+                    <p class="name">Chào hàng chuyên nghiệp để bán hàng thành công</p>
+            
+                    <p class="price">115.000đ</p>
+            
+                    <p class="discount">85.100đ</p>
+                </a>
+            
+                <button class="buy-btn">
+                    <a style="color: #fff;" href="https://shopee.vn/S%C3%A1ch-Giao-ti%E1%BA%BFp-chuy%C3%AAn-nghi%E1%BB%87p-%C4%91%E1%BB%83-b%C3%A1n-h%C3%A0ng-th%C3%A0nh-c%C3%B4ng-i.154779484.2327389360?sp_atk=7b0eeeed-ac08-4790-a584-714cebd72194&xptdk=7b0eeeed-ac08-4790-a584-714cebd72194">Mua ngay</a>
+                </button>
+                <p class="sold">Đã bán <b style="color: rgb(0, 235, 0);" >326</b></p>
+            </div>
+            <div class="box">
+                <div class="discount-number">-12%</div>
+                <a
+                    href="https://shopee.vn/S%C3%A1ch-Th%C3%A9p-%C4%91%C3%A3-t%C3%B4i-th%E1%BA%BF-%C4%91%E1%BA%A5y-i.69256815.1230781611?sp_atk=90715e68-2596-4121-8186-ad2323d3a690&xptdk=90715e68-2596-4121-8186-ad2323d3a690">
+                    <img style="width: 110px;" src="./web/van-hoc-nghe-thuat/img/thep-da-cho-toi-the-day.jpg" alt="Thép đã tôi thế đấy">
+            
+                    <p class="name">Thép đã tôi thế đấy</p>
+            
+                    <p class="price">136.000đ</p>
+            
+                    <p class="discount">119.680đ</p>
+                </a>
+            
+                <button class="buy-btn">
+                    <a style="color: #fff;" href="https://shopee.vn/S%C3%A1ch-Th%C3%A9p-%C4%91%C3%A3-t%C3%B4i-th%E1%BA%BF-%C4%91%E1%BA%A5y-i.69256815.1230781611?sp_atk=90715e68-2596-4121-8186-ad2323d3a690&xptdk=90715e68-2596-4121-8186-ad2323d3a690">Mua ngay</a>
+                </button>
+                <p class="sold">Đã bán <b style="color: rgb(0, 235, 0);" >494</b></p>
+            </div>
+        </div>
+    </div>
+    <!-- End: Best Seller -->
+
+    <!-- Begin: Sale Product Slide show -->
+    <div id="sale">
+        <div class="title">
+            <p>Sách Sale</p>
+        </div>
+        <div class="glider-contain">
+            <div class="glider">
+                <div class="container">
+                    <div class="box">
+                        <div class="discount-number">-29%</div>
+                        <a href="https://shopee.vn/S%C3%A1ch-Gi%C3%A1o-Tr%C3%ACnh-Qu%E1%BA%A3n-Tr%E1%BB%8B-H%E1%BB%8Dc-i.135852798.12277992238?sp_atk=17bcfbba-1490-4cdd-bc9b-7760aabcd65f&xptdk=17bcfbba-1490-4cdd-bc9b-7760aabcd65f">
+                            <img style="width: 130px;" src="./web/giao-trinh/img/quan-tri.jpg" alt="Quản trị học">
+                    
+                            <p class="name">Quản trị học</p>
+                    
+                            <p class="price">180.000đ</p>
+                    
+                            <p class="discount">127.800đ</p>
+                        </a>
+                    
+                        <button class="buy-btn">
+                            <a style="color: #fff;" href="https://shopee.vn/S%C3%A1ch-Gi%C3%A1o-Tr%C3%ACnh-Qu%E1%BA%A3n-Tr%E1%BB%8B-H%E1%BB%8Dc-i.135852798.12277992238?sp_atk=17bcfbba-1490-4cdd-bc9b-7760aabcd65f&xptdk=17bcfbba-1490-4cdd-bc9b-7760aabcd65f">Mua ngay</a>
+                        </button>
+                        <p class="sold">Đã bán 4</p>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="box">
+                        <div class="discount-number">-30%</div>
+                        <a
+                            href="https://shopee.vn/S%C3%A1ch-Hello-c%C3%A1c-b%E1%BA%A1n-m%C3%ACnh-l%C3%A0-t%C3%B4i-%C4%91i-code-d%E1%BA%A1o-1980Books-i.243501221.17062704204?sp_atk=34acb7c0-f3ac-4b2f-8cf1-8973ab872b4c&xptdk=34acb7c0-f3ac-4b2f-8cf1-8973ab872b4c">
+                            <img style="width: 150px;" src="./web/giao-trinh/img/code-dao.jpg" alt="Hello các bạn, mình là tôi đi code dạo">
+                    
+                            <p class="name">Hello các bạn, mình là tôi đi code dạo</p>
+                    
+                            <p class="price">180.000đ</p>
+                    
+                            <p class="discount">132.300đ</p>
+                        </a>
+                    
+                        <button class="buy-btn">
+                            <a style="color: #fff;" href="https://shopee.vn/S%C3%A1ch-Hello-c%C3%A1c-b%E1%BA%A1n-m%C3%ACnh-l%C3%A0-t%C3%B4i-%C4%91i-code-d%E1%BA%A1o-1980Books-i.243501221.17062704204?sp_atk=34acb7c0-f3ac-4b2f-8cf1-8973ab872b4c&xptdk=34acb7c0-f3ac-4b2f-8cf1-8973ab872b4c">Mua ngay</a>
+                        </button>
+                        <p class="sold">Đã bán 100</p>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="box">
+                        <div class="discount-number">-40%</div>
+                        <a
+                            href="https://shopee.vn/S%C3%A1ch-T%C3%A2m-l%C3%BD-d%C3%A2n-t%E1%BB%99c-An-Nam-i.431679329.8565810274?sp_atk=9ec68f8e-de63-4f1f-a993-e067a07c3eeb&xptdk=9ec68f8e-de63-4f1f-a993-e067a07c3eeb">
+                            <img style="width: 150px;" src="./web/van-hoa-xa-hoi-lich-su/img/tam-ly-dan-toc-an-nam.jpg" alt="Tâm lý dân tộc An Nam">
+                    
+                            <p class="name">Tâm lý dân tộc An Nam</p>
+                    
+                            <p class="price">109.000đ</p>
+                    
+                            <p class="discount">65.400đ</p>
+                        </a>
+                    
+                        <button class="buy-btn">
+                            <a style="color: #fff;" href="https://shopee.vn/S%C3%A1ch-T%C3%A2m-l%C3%BD-d%C3%A2n-t%E1%BB%99c-An-Nam-i.431679329.8565810274?sp_atk=9ec68f8e-de63-4f1f-a993-e067a07c3eeb&xptdk=9ec68f8e-de63-4f1f-a993-e067a07c3eeb">Mua ngay</a>
+                        </button>
+                        <p class="sold">Đã bán 906</p>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="box">
+                        <div class="discount-number">-35%</div>
+                        <a
+                            href="https://shopee.vn/S%C3%A1ch-X%E1%BB%A9-%C4%91%C3%A0ng-trong-i.329874075.9982676383?sp_atk=5e64543e-6676-4ac3-868b-581ba86647e8&xptdk=5e64543e-6676-4ac3-868b-581ba86647e8">
+                            <img style="width: 150px;" src="./web/van-hoa-xa-hoi-lich-su/img/dang-trong.jpg" alt="Đàng Trong">
+                    
+                            <p class="name">Xứ Đàng Trong</p>
+                    
+                            <p class="price">99.000đ</p>
+                    
+                            <p class="discount">64.350đ</p>
+                        </a>
+                    
+                        <button class="buy-btn">
+                            <a style="color: #fff;" href="https://shopee.vn/S%C3%A1ch-X%E1%BB%A9-%C4%91%C3%A0ng-trong-i.329874075.9982676383?sp_atk=5e64543e-6676-4ac3-868b-581ba86647e8&xptdk=5e64543e-6676-4ac3-868b-581ba86647e8">Mua ngay</a>
+                        </button>
+                        <p class="sold">Đã bán 55</p>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="box">
+                        <div class="discount-number">-25%</div>
+                        <a
+                            href="https://shopee.vn/S%C3%A1ch-B%C3%A1ch-Vi%E1%BB%87t-Ph%C3%A1o-%C4%90%C3%A0i-S%E1%BB%91-Dan-Brown-i.154779484.9835435859?sp_atk=34424a0d-f372-4fc8-a885-95116dc01ed2&xptdk=34424a0d-f372-4fc8-a885-95116dc01ed2">
+                            <img style="width: 150px;" src="./web/tieu-thuyet-truyen/img/phao-dai-so.jpg" alt="Pháo đài số">
+                    
+                            <p class="name">Pháo đài số</p>
+                    
+                            <p class="price">199.000đ</p>
+                    
+                            <p class="discount">149.250đ</p>
+                        </a>
+                    
+                        <button class="buy-btn">
+                            <a style="color: #fff;" href="https://shopee.vn/S%C3%A1ch-B%C3%A1ch-Vi%E1%BB%87t-Ph%C3%A1o-%C4%90%C3%A0i-S%E1%BB%91-Dan-Brown-i.154779484.9835435859?sp_atk=34424a0d-f372-4fc8-a885-95116dc01ed2&xptdk=34424a0d-f372-4fc8-a885-95116dc01ed2">Mua ngay</a>
+                        </button>
+                        <p class="sold">Đã bán 624</p>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="box">
+                        <div class="discount-number">-21%</div>
+                        <a
+                            href="https://shopee.vn/S%C3%A1ch-Ra-B%E1%BB%9D-Su%E1%BB%91i-Ng%E1%BA%AFm-Hoa-K%C3%A8n-H%E1%BB%93ng-T%E1%BA%B7ng-K%C3%A8m-Bookmark-B%E1%BB%93i-Hai-M%E1%BA%B7t-Thi%E1%BB%87p-Tr%C3%A1i-Tim-In-B%C3%A0i-Th%C6%A1-C%E1%BB%A7a-T%C3%A1c-Gi%E1%BA%A3-i.142856269.14135567173?sp_atk=65a94b85-6cf4-4d37-bfec-f084daf18e31&xptdk=65a94b85-6cf4-4d37-bfec-f084daf18e31">
+                            <img style="width: 160px;" src="./web/tieu-thuyet-truyen/img/di-ra-bo-suoi.jpg" alt="Ra bờ suối ngắm hoa kèn hồng">
+                    
+                            <p class="name">Ra bờ suối ngắm hoa kèn hồng</p>
+                    
+                            <p class="price">145.000đ</p>
+                    
+                            <p class="discount">113.900đ</p>
+                        </a>
+                    
+                        <button class="buy-btn">
+                            <a style="color: #fff;" href="https://shopee.vn/S%C3%A1ch-Ra-B%E1%BB%9D-Su%E1%BB%91i-Ng%E1%BA%AFm-Hoa-K%C3%A8n-H%E1%BB%93ng-T%E1%BA%B7ng-K%C3%A8m-Bookmark-B%E1%BB%93i-Hai-M%E1%BA%B7t-Thi%E1%BB%87p-Tr%C3%A1i-Tim-In-B%C3%A0i-Th%C6%A1-C%E1%BB%A7a-T%C3%A1c-Gi%E1%BA%A3-i.142856269.14135567173?sp_atk=65a94b85-6cf4-4d37-bfec-f084daf18e31&xptdk=65a94b85-6cf4-4d37-bfec-f084daf18e31">Mua ngay</a>
+                        </button>
+                        <p class="sold">Đã bán 790</p>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="box">
+                        <div class="discount-number">-25%</div>
+                        <a
+                            href="https://shopee.vn/S%C3%A1ch-Ph%C3%B9-th%E1%BB%A7y-x%E1%BB%A9-Oz-(2021)-%C4%91t-i.2921062.13932149980?sp_atk=10ae60b6-f766-4d29-bed3-a83a6d942480&xptdk=10ae60b6-f766-4d29-bed3-a83a6d942480">
+                            <img style="width: 140px;" src="./web/thieu-nhi/img/phu-thuy-xu-oz.jpg" alt="Phù thủy xứ Oz">
+                    
+                            <p class="name">Phù thủy xứ Oz</p>
+                    
+                            <p class="price">119.000đ</p>
+                    
+                            <p class="discount">89.250đ</p>
+                        </a>
+                    
+                        <button class="buy-btn">
+                            <a style="color: #fff;" href="https://shopee.vn/S%C3%A1ch-Ph%C3%B9-th%E1%BB%A7y-x%E1%BB%A9-Oz-(2021)-%C4%91t-i.2921062.13932149980?sp_atk=10ae60b6-f766-4d29-bed3-a83a6d942480&xptdk=10ae60b6-f766-4d29-bed3-a83a6d942480">Mua ngay</a>
+                        </button>
+                        <p class="sold">Đã bán 1287</p>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="box">
+                        <div class="discount-number">-25%</div>
+                        <a
+                            href="https://shopee.vn/S%C3%A1ch-Ph%C3%A1t-Tri%E1%BB%83n-Tr%C3%AD-Tu%E1%BB%87-C%E1%BA%A3m-X%C3%BAc-Con-%C4%90%C6%B0%E1%BB%A3c-L%C3%A0-Ch%C3%ADnh-M%C3%ACnh!-i.2921062.6477982378?sp_atk=e985c1fd-df5c-4520-87d6-2d00c8302d09&xptdk=e985c1fd-df5c-4520-87d6-2d00c8302d09">
+                            <img style="width: 150px;" src="./web/thieu-nhi/img/con-duoc-la-chinh-minh.jpg" alt="Con được là chính mình">
+                    
+                            <p class="name">Con được là chính mình</p>
+                    
+                            <p class="price">50.000đ</p>
+                    
+                            <p class="discount">37.500đ</p>
+                        </a>
+                    
+                        <button class="buy-btn">
+                            <a style="color: #fff;" href="https://shopee.vn/S%C3%A1ch-Ph%C3%A1t-Tri%E1%BB%83n-Tr%C3%AD-Tu%E1%BB%87-C%E1%BA%A3m-X%C3%BAc-Con-%C4%90%C6%B0%E1%BB%A3c-L%C3%A0-Ch%C3%ADnh-M%C3%ACnh!-i.2921062.6477982378?sp_atk=e985c1fd-df5c-4520-87d6-2d00c8302d09&xptdk=e985c1fd-df5c-4520-87d6-2d00c8302d09">Mua ngay</a>
+                        </button>
+                        <p class="sold">Đã bán 1046</p>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="box">
+                        <div class="discount-number">-26%</div>
+                        <a
+                            href="https://shopee.vn/S%C3%A1ch-Giao-ti%E1%BA%BFp-chuy%C3%AAn-nghi%E1%BB%87p-%C4%91%E1%BB%83-b%C3%A1n-h%C3%A0ng-th%C3%A0nh-c%C3%B4ng-i.154779484.2327389360?sp_atk=7b0eeeed-ac08-4790-a584-714cebd72194&xptdk=7b0eeeed-ac08-4790-a584-714cebd72194">
+                            <img style="width: 100px;" src="./web/khoa-hoc-kinh-te/img/chao-hang.png" alt="Chào hàng chuyên nghiệp để bán hàng thành công">
+                    
+                            <p class="name">Chào hàng chuyên nghiệp để bán hàng thành công</p>
+                    
+                            <p class="price">115.000đ</p>
+                    
+                            <p class="discount">85.100đ</p>
+                        </a>
+                    
+                        <button class="buy-btn">
+                            <a style="color: #fff;" href="https://shopee.vn/S%C3%A1ch-Giao-ti%E1%BA%BFp-chuy%C3%AAn-nghi%E1%BB%87p-%C4%91%E1%BB%83-b%C3%A1n-h%C3%A0ng-th%C3%A0nh-c%C3%B4ng-i.154779484.2327389360?sp_atk=7b0eeeed-ac08-4790-a584-714cebd72194&xptdk=7b0eeeed-ac08-4790-a584-714cebd72194">Mua ngay</a>
+                        </button>
+                        <p class="sold">Đã bán 326</p>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="box">
+                        <div class="discount-number">-50%</div>
+                        <a
+                            href="https://shopee.vn/S%C3%A1ch-N%E1%BB%81n-Kinh-T%E1%BA%BF-T%E1%BB%B1-Do-(X%E1%BA%A3-Kho)-i.188606801.6535256675?sp_atk=ba0ef32a-a58c-4192-923c-b096594159ba&xptdk=ba0ef32a-a58c-4192-923c-b096594159ba">
+                            <img style="width: 100px;" src="./web/khoa-hoc-kinh-te/img/nen-kinh-te-tu-do.jpg" alt="Nền kinh tế tự do">
+                    
+                            <p class="name">Nền kinh tế tự do</p>
+                    
+                            <p class="price">139.000đ</p>
+                    
+                            <p class="discount">69.500đ</p>
+                        </a>
+                    
+                        <button class="buy-btn">
+                            <a style="color: #fff;" href="https://shopee.vn/S%C3%A1ch-N%E1%BB%81n-Kinh-T%E1%BA%BF-T%E1%BB%B1-Do-(X%E1%BA%A3-Kho)-i.188606801.6535256675?sp_atk=ba0ef32a-a58c-4192-923c-b096594159ba&xptdk=ba0ef32a-a58c-4192-923c-b096594159ba">Mua ngay</a>
+                        </button>
+                        <p class="sold">Đã bán 160</p>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="box">
+                        <div class="discount-number">-30%</div>
+                        <a
+                            href="https://shopee.vn/S%C3%A1ch-Ngh%E1%BB%87-Thu%E1%BA%ADt-Ch%E1%BB%AFa-L%C3%A0nh-i.243501221.3696106161?sp_atk=f9fbaf74-bdfe-442c-a805-92a0c1d221d8&xptdk=f9fbaf74-bdfe-442c-a805-92a0c1d221d8">
+                            <img style="width: 150px;" src="./web/van-hoc-nghe-thuat/img/chua-lanh.png" alt="Nghệ thuật chữa lành">
+                    
+                            <p class="name">Nghệ thuật chữa lành</p>
+                    
+                            <p class="price">129.000đ</p>
+                    
+                            <p class="discount">90.300đ</p>
+                        </a>
+                    
+                        <button class="buy-btn">
+                            <a style="color: #fff;" href="https://shopee.vn/S%C3%A1ch-Ngh%E1%BB%87-Thu%E1%BA%ADt-Ch%E1%BB%AFa-L%C3%A0nh-i.243501221.3696106161?sp_atk=f9fbaf74-bdfe-442c-a805-92a0c1d221d8&xptdk=f9fbaf74-bdfe-442c-a805-92a0c1d221d8">Mua ngay</a>
+                        </button>
+                        <p class="sold">Đã bán 252</p>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="box">
+                        <div class="discount-number">-25%</div>
+                        <a
+                            href="https://shopee.vn/S%C3%A1ch_B%E1%BB%89-V%E1%BB%8F-(T%C3%A1i-B%E1%BA%A3n-2020)-HH-i.2921062.9685879653?sp_atk=4ab55a3c-90be-4f4b-8bfb-36fb3d883078&xptdk=4ab55a3c-90be-4f4b-8bfb-36fb3d883078">
+                            <img style="width: 150px;" src="./web/van-hoc-nghe-thuat/img/bi-vo.jpg" alt="Bí vỏ">
+                    
+                            <p class="name">Bí vỏ</p>
+                    
+                            <p class="price">50.000đ</p>
+                    
+                            <p class="discount">37.500đ</p>
+                        </a>
+                    
+                        <button class="buy-btn">
+                            <a style="color: #fff;" href="https://shopee.vn/S%C3%A1ch_B%E1%BB%89-V%E1%BB%8F-(T%C3%A1i-B%E1%BA%A3n-2020)-HH-i.2921062.9685879653?sp_atk=4ab55a3c-90be-4f4b-8bfb-36fb3d883078&xptdk=4ab55a3c-90be-4f4b-8bfb-36fb3d883078">Mua ngay</a>
+                        </button>
+                        <p class="sold">Đã bán 301</p>
+                    </div>
+                </div>
+            </div>
+        
+            <button aria-label="Previous" class="glider-prev">«</button>
+            <button aria-label="Next" class="glider-next">»</button>
+        </div>
+    </div>
+    <!-- End: Sale Product Slide show -->
+
+    <!-- Start: Contact Form -->
+    <div id="contact">
+        <div class="title">
+            <p>Liên hệ</p>
+        </div>
+        <div class="container">
+            <div class="adress">
+                <i class="fa-solid fa-location-dot"></i>
+                <p class="location">TP Hồ Chí Minh, Việt Nam</p>
+
+                <i class="fa-solid fa-phone phone"></i>
+                <p class="phone-number">Số điện thoại: 0123 456 789</p>
+
+                <i class="fa-solid fa-envelope mail"></i>
+                <p class="email">Email: mail@gmail.com</p>
+            </div>
+            <div class="info">
+                <input class="name" type="text" placeholder="Họ và tên">
+                <input class="dia-chi" type="text" placeholder="Địa chỉ">
+                <input class="mess" type="text" placeholder="Lời nhắn">
+            </div>
+            <button>Gửi</button>
+        </div>
+    </div>
+    <!-- End: Contact Form -->
+    <!-- Start: Footer -->
+    <div id="footer">
+        <div class="logo">
+            <a href="index.html">KAT</a>
+            <p>Nơi bạn tìm kiếm tri thức</p>
+        </div>
+        <div class="adress">
+            <p>      Lê Văn Sỹ, quận 3, thành phố Hồ Chí Minh, Việt Nam</p>
+            <p>      An Dương Vương, quận 5, thành phố Hồ Chí Minh, Việt Nam</p>
+            <p>      Lạc Long Quân, quận 11, thành phố Hồ Chí Minh, Việt Nam</p>
+        </div>
+    </div>
+    <!-- End: Footer -->
+    <script src="./js/glider.js"></script>
+    <script src="./js/main.js"></script>
+
+</body>
+
+</html>

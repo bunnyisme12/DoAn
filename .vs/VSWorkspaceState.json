@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\test",
+    "\\test\\assets",
+    "\\test\\assets\\fonts",
+    "\\test\\web",
+    "\\test\\web\\giao-trinh",
+    "\\test\\web\\giao-trinh\\img",
+    "\\test\\web\\khoa-hoc-kinh-te",
+    "\\test\\web\\login",
+    "\\test\\web\\signup"
+  ],
+  "SelectedNode": "\\test\\web\\login\\login.html",
+  "PreviewInSolutionExplorer": false
+}

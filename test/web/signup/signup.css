@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Noto+Sans&family=Open+Sans:wght@700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+body {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+
+    background: url(./img/login-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    font-family: sans-serif;
+}
+
+.container {
+    position: relative;
+    width: 400px;
+    padding: 60px 40px;
+
+    background-color: #fff;
+}
+
+header {
+    font-size: 40px;
+    font-family: 'Montserrat', sans-serif;
+
+    margin-bottom: 60px;
+}
+
+.input-field,
+form .button {
+    position: relative;
+    margin: 25px 0;
+    height: 50px;
+    width: 100%;
+}
+
+.input-field input {
+    height: 100%;
+    width: 100%;
+    padding-left: 15px;
+
+    border: 1px solid silver;
+    outline: none;
+
+    font-size: 19px;
+
+    transition: 0.4s;
+}
+
+input:focus {
+    border: 1px solid #1da1f2;
+}
+
+.input-field label,
+i.show {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+
+.input-field label {
+    left: 15px;
+
+    pointer-events: none;
+
+    font-size: 18px;
+    color: grey;
+
+    transition: 0.4s;
+}
+
+i.show {
+    right: 20px;
+
+    font-size: 18px;
+    color: #111;
+
+    cursor: pointer;
+
+    user-select: none;
+
+    visibility: hidden;
+}
+
+input:valid~i.show {
+    visibility: visible;
+}
+
+input:focus~label,
+input:valid~label {
+    transform: translateY(-34px);
+
+    background-color: white;
+
+    font-size: 16px;
+    color: #1da1f2;
+}
+
+form .button {
+    margin-top: 30px;
+    z-index: 111;
+
+    overflow: hidden;
+
+}
+
+.button .inner {
+    position: absolute;
+    height: 100%;
+    width: 200%;
+    left: -100%;
+    z-index: -1;
+
+    background: -webkit-linear-gradient(right, #00dbde, #fc00ff);
+
+    transition: all 0.4s;
+}
+
+.button:hover .inner {
+    left: 0;
+}
+
+.button button {
+    width: 100%;
+    height: 100%;
+
+    border: none;
+    outline: none;
+
+    background: none;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: white;
+
+    cursor: pointer;
+}
+
+.container .auth {
+    margin: 35px 0 20px 0;
+
+    font-size: 19px;
+    color: grey;
+}
+
+.links {
+    display: flex;
+
+    cursor: pointer;
+}
+
+.facebook,
+.google {
+    height: 40px;
+    width: 100%;
+    margin: 0 10px;
+
+    border: 1px solid silver;
+    border-radius: 3px;
+
+    transition: 0.4s;
+}
+
+.facebook:hover {
+    border: 2px solid #4267b2;
+}
+
+.google:hover {
+    border: 2px solid #dd4b39;
+}
+
+.facebook i,
+.facebook span {
+    color: #4267b2;
+}
+
+.google i,
+.google span {
+    color: #dd4b39;
+}
+
+.links i {
+    font-size: 23px;
+
+    line-height: 40px;
+    margin-left: -90px;
+}
+
+.links span {
+    position: absolute;
+    padding-left: 8px;
+
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.signup {
+    margin-top: 50px;
+
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.signup a {
+    color: #3498db;
+    text-decoration: none;
+
+    margin-left: 5px;
+
+    transition: 0.4s;
+}
+
+.signup a:hover {
+    text-decoration: underline;
+}
